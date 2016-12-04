@@ -4,8 +4,10 @@
     <title>PathTracer</title>
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/site.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/MathLib.js"></script>
+    <script type="text/javascript" src="js/WebGLRenderer.js"></script>
 </head>
-<body>
+<body onload="main()">
     <div class="container">
         <header class="page-header">
             <h1>PathTracer 2016</h1>
@@ -20,5 +22,29 @@
         <blockquote>{{text}}</blockquote>
     </div>
     <script src="lib/angular/angular.min.js"></script>
+
+    <script type="x-shader/x-vertex" id="vsshader">
+        attribute vec3 position; // position of the point
+        attribute vec3 color; // the color of the point
+        uniform mat4 Pmatrix; // a uniform variable: its value is constant while rendering an object
+        uniform mat4 Mmatrix; // movement matrix of the triangle
+        uniform mat4 Vmatrix; // the movement matrix from Object ref to View ref
+
+        varying vec3 vColor;
+        void main(void)
+        {
+        gl_Position = Pmatrix * Vmatrix * Mmatrix * vec4(position, 1.0);
+        vColor=color;
+        }
+    </script>
+    <script type="x-shader/x-fragment" id="psshader">
+        precision mediump float;
+        varying vec3 vColor;
+        void main(void)
+        {
+        gl_FragColor = vec4(vColor, 1.0);
+        }
+    </script>
+    <canvas id="WebGL_canvas" style="position: absolute; background-color: black;"></canvas>
 </body>
 </html>
