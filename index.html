@@ -1,50 +1,69 @@
 ﻿<!DOCTYPE html>
-<html ng-app>
+<html>
+<!-- contains the charset and the title of page -->
+<!-- can add resources such as style sheets and JS among meta data -->
 <head>
-    <title>PathTracer</title>
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/site.css" rel="stylesheet" />
-    <script type="text/javascript" src="js/MathLib.js"></script>
-    <script type="text/javascript" src="js/WebGLRenderer.js"></script>
+    <meta charset="utf-8"/>
+    <title>Portfolio Webpage</title>
+    <!-- define my own global css file -->
+    <link href="css/global-min.css" rel="stylesheet" />
 </head>
-<body onload="main()">
-    <div class="container">
-        <header class="page-header">
-            <h1>PathTracer 2016</h1>
-        </header>
-        <div class="jumbotron input-group">
-            <span class="input-group-addon">
-                <i class="glyphicon glyphicon-user"></i>
-            </span>
-            <input class="form-control" ng-model="text" />
+<body>
+    <div class="header">
+        <div class="custom-menu">
+            <a class="menu-heading" href="index.html">Hong SangHyeok</a>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="experiences.html">Experiences</a>
+                </li>
+                <li>
+                    <a href="">Projects</a>
+                </li>
+                <li>
+                    <a href="resume.html">Resume</a>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+            </ul>
         </div>
-
-        <blockquote>{{text}}</blockquote>
     </div>
-    <script src="lib/angular/angular.min.js"></script>
-
-    <script type="x-shader/x-vertex" id="vsshader">
-        attribute vec3 position; // position of the point
-        attribute vec3 color; // the color of the point
-        uniform mat4 Pmatrix; // a uniform variable: its value is constant while rendering an object
-        uniform mat4 Mmatrix; // movement matrix of the triangle
-        uniform mat4 Vmatrix; // the movement matrix from Object ref to View ref
-
-        varying vec3 vColor;
-        void main(void)
-        {
-        gl_Position = Pmatrix * Vmatrix * Mmatrix * vec4(position, 1.0);
-        vColor=color;
-        }
-    </script>
-    <script type="x-shader/x-fragment" id="psshader">
-        precision mediump float;
-        varying vec3 vColor;
-        void main(void)
-        {
-        gl_FragColor = vec4(vColor, 1.0);
-        }
-    </script>
-    <canvas id="WebGL_canvas" style="position: absolute; background-color: black;"></canvas>
+    <div class="content">
+        <div class="portrait">
+            <img width="100" alt="Hong SangHyeok" src="img/portrait.jpg" />
+        </div>
+        <p>
+            I majored in Master degree and Bchelor in Computer Science from DigiPen Institute of Technology.
+            I'm a Engine Programmer in Bluehole. I'm currently working on the Console Porting for TERA to PS4 and Xbox One
+        </p>
+        <p>
+            You can contact me by
+            <a href="mailto:tkdgur4427@gmail.com">email</a>
+        </p>
+    </div>
+    <div class="divider-container">
+        <hr class="divider" />
+    </div>
+    <div class="projects">
+        <h2 class="content-subhead">Representative Projects</h2>
+        <div class="image-container">
+            <div class="image-container-left">
+                <a href="documents/TeraConsolePorting.html">
+                    <img alt="Tera Console Porting" width="400" height="200" src="img/tera_console_experience_thumbnail.jpg" />
+                </a>
+            </div>
+            <div class="image-container-right">
+                <a href="documents/TeraConsolePorting.html">
+                    <img alt="Tera Console Porting" width="400" height="200" src="img/tera_experience_thumbnail.jpg" />
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="divider-container">
+        <hr class="divider" />
+    </div>
 </body>
 </html>
