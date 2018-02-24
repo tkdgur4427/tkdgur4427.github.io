@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<!-- can add resources such as style sheets and JS among meta data -->
+<head>
+    <meta charset="utf-8" />
+    <title>Portfolio Webpage</title>
+    <!-- define my own global css file -->
+    <link href="../css/global-min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="header">
+        <div class="custom-menu">
+            <a class="menu-heading" href="../index.html">Hong SangHyeok</a>
+            <ul>
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+                <li>
+                    <a href="../experiences.html">Experiences</a>
+                </li>
+                <li>
+                    <a href="">Projects</a>
+                </li>
+                <li>
+                    <a href="../resume.html">Resume</a>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="experience-element-page">
+        <div class="youtube">
+            <img alt="Video Thumbnail" src="../img/tera_console_thumbnail.jpg" />
+            <div class="play" onclick="embedPlayer(this, 'a6FCMKUueJk')"></div>
+        </div>
+        <h2>The TERA Console Porting</h2>
+        <p>
+            TERA is the MMORPG game in PC, living the services for a long time, about 7 years. TERA has been designed and developed for combatting specialized in the console pad. TERA has gathered their fans by a unique non-targeting combat system in MMORPG, which is one of major reason to remain the beloved MMORPG game.
+        </p>
+        <p>
+            For a long time, fans of TERA are eager to come out in Consoles. The PC development environment for TERA is one of big barrier to hinder porting TERA to previous consoles. This generation of consoles (PS4 and Xbox One) is based on x86/x64 architecture and provides similar environment like PC. Overall console game market becoming friendly to MMORPG game and long desire from old TERA fans starts the console porting for TERA.
+        </p>
+        <p>
+            Porting existing game to consoles with minifying changes is very hard. The project is started from upgrading the Unreal Engine 3. It means that the project is starting from scratch.  In retrospect, it was hard and painful to overcome each step. But it was the moment that I could become better engine programmer as well as console programmer
+        </p>
+        <h2>Summary</h2>
+        <ul>
+            <li>Engine Programmer, Bluehole</li>
+            <li>Worked as an engine programmer for TERA Console Porting Project</li>
+            <li>Lead the project as a Technical Director from the beginning of the project</li>
+        </ul>
+        <h2>Details</h2>
+        <ul>
+            <li>
+                Porting TERA from old UE3 to up-to-date UE3 (we called UE3.5)
+            </li>
+            <li>
+                Porting TERA to Consoles (PS4 and Xbox One)
+            </li>
+            <li>
+                Designed and re-implemented UE3 rendering pipeline into multi-threaded rendering supporting multi-core policy in the Console
+            </li>
+            <li>
+                Implemented the Multi-Threaded Memory Manager to speed up for allocating CPU and GPU memory
+            </li>
+            <li>
+                Refactored and optimized Asyncloading IO system in TERA
+            </li>
+            <li>
+                Re-implemented Scaleform to supporting UI resource async-loading in UE3.5 and refactored to support multi-threading in logic and render
+            </li>
+            <li>
+                Implemented Content and Cooking Pipeline for the consoles in existing CI (Continuous Integration) PC Build System
+            </li>
+            <li>
+                Integrate Bink2, Speed Tree and Coherent GT (Web UI) for consoles
+            </li>
+            <li>
+                Designed and Implemented the platform-dependent rendering layers for PS4 (Gnm) and Xbox One (DirectX11-x) for multi-threaded rendering
+            </li>
+            <li>
+                Optimize the overall rendering pipeline for consoles
+            </li>
+            <li>
+                Optimize the Particle System in UE3
+            </li>
+            <li>
+                Supported UI scriptors to optimize ActionScripts by providing profiler tools
+            </li>
+        </ul>
+        <p></p>
+    </div>
+    <!-- include document util java scripts -->
+    <script src="../js/DocumentUtil.js"></script>
+</body>
+</html>
